@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from send_mail import send_mail
@@ -29,7 +30,10 @@ def submit():
         dealer = request.form['dealer']
         rating = request.form['rating']
         comments = request.form['comments']
+        print(customer, dealer, rating, comments)
+        return render_template('success.html')
 
 
 if __name__ == '__main__':
+    app.debug = True
     app.run()
